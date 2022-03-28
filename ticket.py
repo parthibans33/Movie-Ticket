@@ -21,8 +21,10 @@ class Movies():
                 
                 try:
                         movieb_name =input('Enter the Movie you want to watch:').upper()
+                        isfound=0
                         for key in movie_name.keys():         
                                 if key == movieb_name: 
+                                        isfound=1
                                         tickets_avail = movie_name[key]
                                         ticket_book = int(input('Enter the Ticket :'))
                                         if tickets_avail >= ticket_book:
@@ -32,10 +34,9 @@ class Movies():
                                         else:
                                                 print('Error!!')
                                         
-                                        
-                                '''else:
-                                        print('Enter Valid Movie Name!!!!')
-                                        break'''
+
+                        if isfound==0:
+                                print('Enter Valid Movie Name!!!!')
                 except:
                         print('Something Wrong!! ')
         
